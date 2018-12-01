@@ -74,6 +74,9 @@ public class MachoClass {
         int count = 0;
         int index = start+2;
 
+        if (index >= lines.length)
+            return start;
+
         String line = lines[index].trim();
         if (line.startsWith("count")) {
             count = Integer.parseInt(line.split("\\s+")[1]);
